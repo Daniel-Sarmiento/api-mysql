@@ -7,7 +7,7 @@ exports.up = function(knex) {
         ALTER TABLE ventas 
         ADD COLUMN id_cliente INT UNSIGNED NOT NULL
         AFTER total,
-        ADD CONSTRAINT id_cliente_fk
+        ADD CONSTRAINT FK_id_cliente
         FOREIGN KEY (id_cliente) REFERENCES clientes(id);
     `);
 };
@@ -19,7 +19,7 @@ exports.up = function(knex) {
 exports.down = function(knex) {
     return knex.raw(`
         ALTER TABLE ventas
-        DROP FOREIGN KEY id_cliente_fk,
+        DROP FOREIGN KEY FK_id_cliente,
         DROP COLUMN id_cliente;
     `)
 };

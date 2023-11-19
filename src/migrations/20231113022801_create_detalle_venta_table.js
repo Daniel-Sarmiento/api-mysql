@@ -17,8 +17,8 @@ exports.up = function (knex) {
             updated_at DATETIME NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
             PRIMARY KEY (id) USING BTREE,
             INDEX id_venta_fk (id_venta) USING BTREE,
-            CONSTRAINT id_venta_fk FOREIGN KEY (id_venta) REFERENCES ventas (id),
-            CONSTRAINT id_producto_fk FOREIGN KEY (id_producto) REFERENCES productos (id)
+            CONSTRAINT FK_id_venta FOREIGN KEY (id_venta) REFERENCES ventas (id),
+            CONSTRAINT FK_id_producto FOREIGN KEY (id_producto) REFERENCES productos (id)
         );
     `);
 };
