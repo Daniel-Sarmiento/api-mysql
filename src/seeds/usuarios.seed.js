@@ -11,5 +11,9 @@ exports.seed = async function (knex) {
   await knex('usuarios').del()
   await knex('usuarios').insert([
     { email: 'email1@gmail.com', password: bcrypt.hashSync('12345', saltosBcrypt) },
+    { email: 'email2@gmail.com', password: bcrypt.hashSync('12345', saltosBcrypt) },
+    { email: 'email3@gmail.com', password: bcrypt.hashSync('12345', saltosBcrypt) },
+    { email: 'email4@gmail.com', password: bcrypt.hashSync('12345', saltosBcrypt) },
+    { email: 'email5@gmail.com', password: bcrypt.hashSync('12345', saltosBcrypt) },
   ]);
 };
